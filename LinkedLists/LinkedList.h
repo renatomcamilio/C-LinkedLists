@@ -18,6 +18,7 @@ typedef struct LinkedList {
 
 void printListMembers(LinkedList listNode);
 LinkedList *searchValue(LinkedList *list, int value);
+void appendNode(LinkedList *list, LinkedList *node);
 
 
 #endif /* defined(__LinkedLists__LinkedList__) */

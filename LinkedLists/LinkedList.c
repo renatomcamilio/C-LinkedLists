@@ -28,3 +28,12 @@ LinkedList *searchValue(LinkedList *list, int value) {
     
     return NULL;
 }
+
+void appendNode(LinkedList *list, LinkedList *node) {
+    if (list->next == NULL) {
+        node->next = NULL;
+        list->next = node;
+    } else {
+        appendNode(list->next, node);
+    }
+}
