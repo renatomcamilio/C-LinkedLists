@@ -16,7 +16,12 @@ int main(int argc, const char * argv[]) {
     LinkedList secondElem = { .data = 2, .next = &thirdElem };
     LinkedList firstElem = { .data = 1, .next = &secondElem };
     
-    printListMembers(firstElem);
+    LinkedList *result = searchValue(&firstElem, 4);
+    if (!result) {
+        printf("Element not found\n");
+    } else {
+        printf("%i\n", result->data);
+    }
     
     return 0;
 }

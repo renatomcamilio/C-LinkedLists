@@ -16,3 +16,15 @@ void printListMembers(LinkedList listNode) {
         printListMembers(*listNode.next);
     }
 }
+
+LinkedList *searchValue(LinkedList *list, int value) {
+    if (list->next != NULL) {
+        if (list->data == value) {
+            return list;
+        }
+        
+        return searchValue(list->next, value);
+    }
+    
+    return NULL;
+}
