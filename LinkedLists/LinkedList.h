@@ -17,9 +17,10 @@ typedef struct LinkedList {
     struct LinkedList *previous;
 } LinkedList;
 
-void printListNodes(LinkedList listNode);
+void printListNodes(LinkedList *listNode);
 LinkedList *searchValue(LinkedList *list, int value);
 void appendNode(LinkedList *list, LinkedList *node);
+void removeNode(LinkedList *node);
 
 
 #endif /* defined(__LinkedLists__LinkedList__) */

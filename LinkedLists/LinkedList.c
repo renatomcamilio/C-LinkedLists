@@ -8,12 +8,17 @@
 
 #include "LinkedList.h"
 
+void printListNodes(LinkedList *listNode) {
+    LinkedList *previous = (!listNode->previous) ? NULL : listNode->previous;
+    LinkedList *next = (!listNode->next) ? NULL : listNode->next;
 
-void printListNodes(LinkedList listNode) {
-    printf("%i\n", listNode.data);
+    printf("previous: %i, me: %i, next: %i\n",
+           (!previous ? 0 : previous->data),
+           listNode->data,
+           (!next ? 0 : next->data));
     
-    if (listNode.next != NULL) {
-        printListNodes(*listNode.next);
+    if (listNode->next != NULL) {
+        printListNodes(listNode->next);
     }
 }
 
@@ -38,3 +43,18 @@ void appendNode(LinkedList *list, LinkedList *node) {
         appendNode(list->next, node);
     }
 }
+
+void removeNode(LinkedList *node) {
+    LinkedList *next = node->next;
+    LinkedList *previous = node->previous;
+    
+    if (previous) {
+        previous->next = (!next) ? NULL : next;
+    }
+    
+    if (next) {
+        next->previous = (!previous) ? NULL : previous;
+    }
+
+}
+
