@@ -16,4 +16,7 @@ typedef struct LinkedList {
     struct LinkedList *next;
 } LinkedList;
 
+void printListMembers(LinkedList listNode);
+
+
 #endif /* defined(__LinkedLists__LinkedList__) */

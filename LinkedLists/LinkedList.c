@@ -8,6 +8,11 @@
 
 #include "LinkedList.h"
 
+
 void printListMembers(LinkedList listNode) {
+    printf("%i\n", listNode.data);
     
+    if (listNode.next != NULL) {
+        printListMembers(*listNode.next);
+    }
 }
