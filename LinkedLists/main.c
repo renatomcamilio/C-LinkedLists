@@ -7,9 +7,16 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include "LinkedList.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    LinkedList thirdElem = { .data = 3, .next = NULL };
+    LinkedList secondElem = { .data = 2, .next = &thirdElem };
+    LinkedList firstElem = { .data = 1, .next = &secondElem };
+    
+    printf("first elem: %i\n", firstElem.data);
+    printf("first elem next: %i\n", firstElem.next->data);
+    
     return 0;
 }
