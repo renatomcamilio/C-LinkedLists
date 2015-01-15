@@ -12,14 +12,26 @@
 
 
 int main(int argc, const char * argv[]) {
-    LinkedList thirdElem = { .data = 3, .next = NULL };
-    LinkedList secondElem = { .data = 2, .next = &thirdElem };
-    LinkedList firstElem = { .data = 1, .next = &secondElem };
+    LinkedList firstElem;
+    LinkedList secondElem;
+    LinkedList thirdElem;
     
-    LinkedList newNode = { .data = 6, .next = NULL };
+    firstElem.data = 1;
+    firstElem.next = &secondElem;
+    firstElem.previous = NULL;
+    
+    secondElem.data = 2;
+    secondElem.next = &thirdElem;
+    secondElem.previous = &firstElem;
+    
+    thirdElem.data = 3;
+    thirdElem.next = NULL;
+    thirdElem.previous = &secondElem;
+    
+    LinkedList newNode = { .data = 7, .next = NULL };
     appendNode(&firstElem, &newNode);
     
-    printListMembers(firstElem);
+    printListNodes(firstElem);
     
     return 0;
 }

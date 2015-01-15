@@ -14,9 +14,10 @@
 typedef struct LinkedList {
     int data;
     struct LinkedList *next;
+    struct LinkedList *previous;
 } LinkedList;
 
-void printListMembers(LinkedList listNode);
+void printListNodes(LinkedList listNode);
 LinkedList *searchValue(LinkedList *list, int value);
 void appendNode(LinkedList *list, LinkedList *node);
 

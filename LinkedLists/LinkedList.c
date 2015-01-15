@@ -9,11 +9,11 @@
 #include "LinkedList.h"
 
 
-void printListMembers(LinkedList listNode) {
+void printListNodes(LinkedList listNode) {
     printf("%i\n", listNode.data);
     
     if (listNode.next != NULL) {
-        printListMembers(*listNode.next);
+        printListNodes(*listNode.next);
     }
 }
 
@@ -33,6 +33,7 @@ void appendNode(LinkedList *list, LinkedList *node) {
     if (list->next == NULL) {
         node->next = NULL;
         list->next = node;
+        node->previous = list;
     } else {
         appendNode(list->next, node);
     }
